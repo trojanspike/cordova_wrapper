@@ -29,4 +29,13 @@ USAGE :
 
 		// clear geo watch
 		PG.geo('clear', _myGeoWatchID);
+
+		// chaining
+		PG.evt('pause', function(){
+				console.log('device put into pause state');
+			}).evt('backbutton', function(){
+				console.log('backbutton event fired');
+			}).geo(function(position){
+				console.log(position.coords);
+		});
 	});
