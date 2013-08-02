@@ -1,4 +1,4 @@
-cordova_js_class
+cordova_wrapper
 ================
 
 Little cordova javascript class for easy use in cordova apps
