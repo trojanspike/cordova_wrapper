@@ -5,6 +5,7 @@ Little cordova javascript class for easy use in cordova apps
 
 USAGE :
 
+``` js
 	cordova(function(PG){
 		// device is ready , callback param can be anything.
 
