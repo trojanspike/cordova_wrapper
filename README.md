@@ -1,6 +1,6 @@
 ## cordova-wrapper
-### JS wrapper for ease of use with the cordova API - quirk work around
-### developer contribution  welcome 
+JS wrapper for ease of use with the cordova API - quirk work around
+developer contribution  welcome 
 ----------
 
 JS wrapper for ease of use with the cordova API - quirk work around
@@ -9,7 +9,7 @@ JS wrapper for ease of use with the cordova API - quirk work around
 ```javascript
     cordova() // return empty array []
     cordova('device'); // return device object
-    cordova('devive' , function(device){
+    cordova('device' , function(device){
         // device object within callback & device event: deviceready
     });
     cordova(['devive', 'events', 'geolocation'] , function(device, events, geo){
