@@ -115,6 +115,7 @@ module.exports = function(grunt) {
         grunt.file.recurse(folder+'/', function(abspath, rootdir, subdir, filename){
             grunt.file.delete(folder+'/'+filename);
         })
+        grunt.file.write(folder+'/index.html', '' );
     }
     
     
