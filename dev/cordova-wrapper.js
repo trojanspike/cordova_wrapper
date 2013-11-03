@@ -60,15 +60,18 @@ cordova.extend('device', (function() {
   return window.device;
 })());
 
-cordova.extend('events', (function() {
-  return {
-    on: function(evt, callback) {
-      return document.addEventListener(evt, function() {
-        return callback();
-      }, false);
-    }
-  };
-})());
+cordova.extend('events', function(evt, callb) {
+  return document.addEventListener(evt, function() {
+    return callb();
+  }, false);
+});
+
+cordova.extend('example', function() {
+  var _exp;
+  _exp = function() {};
+  _exp.prototype.run = function() {};
+  return new _exp();
+});
 
 cordova.extend('geolocation', (function() {
   return {

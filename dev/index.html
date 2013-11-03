@@ -8,18 +8,19 @@
         
         
     <script>
-        cordova(['events' , 'geolocation', 'device'], function(events, geo, devive){
-            console.log(events);
-            console.log(geo);
-            console.log(devive);
-        });
-        
-        cordova('events').on('deviceready' , function(){
-            alert('@ device ready to use');
-        });
-        cordova('events').on('menubutton' , function(){
-            
-            alert('menu pressed by me');
+        cordova(['events', 'geolocation'] , function(evt, geo){
+            evt('pause' , function(){
+                alert('GO : pause');
+            }); 
+            evt('resume' , function(){
+                alert('GO : resume');
+            });
+            evt('backbutton' , function(){
+                alert('GO : backbutton');
+                geo.current(function(pos){
+                    console.log(pos);
+                });
+            });
         });
     </script>    
     </body>

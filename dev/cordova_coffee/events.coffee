@@ -1,7 +1,4 @@
-cordova.extend 'events' , do ->
-    return {
-        on : (evt, callback)->
-            document.addEventListener evt, ->
-                callback()
-            , false
-    }    
+cordova.extend 'events', (evt, callb)->
+    return document.addEventListener evt, ->
+        callb()
+    , false

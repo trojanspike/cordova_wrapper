@@ -11,7 +11,7 @@ do ->
             document.addEventListener "deviceready", ->
                 cordova = ->
                 cordova.prototype = _cordova
-                load.call this, new cordova()
+                load.call new cordova()
             , false
         
         # load - string, no callback cordova('device') - return device object
@@ -21,7 +21,7 @@ do ->
         # load - string, callback passed cordova('device', function(device){}) - return device object
         if typeof load is 'string' and typeof callback is 'function'
             document.addEventListener "deviceready", ->
-                callback.call this, _cordova[load]
+                callback.call _cordova[load]
             , false
             
             
@@ -31,7 +31,7 @@ do ->
             for i in load
                 _callObj.push _cordova[i]
             document.addEventListener "deviceready", ->
-                callback.apply this, _callObj
+                callback.apply null, _callObj
             , false
             
         
@@ -55,6 +55,8 @@ do ->
     return null
 
 cordova.extend 'device' , do ->
-    return window.device
+   return window.device
+    
+
     
     
