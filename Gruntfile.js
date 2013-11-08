@@ -92,7 +92,7 @@ module.exports = function(grunt) {
     grunt.registerTask('dist', function(){
         clearFolder('dist');
         grunt.task.run('coffee:dist');
-        grunt.task.run('uglify');
+        grunt.task.run('uglify:dist');
     });
     
     grunt.registerTask('dev', function(){
@@ -113,9 +113,13 @@ module.exports = function(grunt) {
     /*  */
     function clearFolder(folder){
         grunt.file.recurse(folder+'/', function(abspath, rootdir, subdir, filename){
-            grunt.file.delete(folder+'/'+filename);
+            if(filename !== 'index.html'){
+                grunt.file.delete(folder+'/'+filename);
+            }
         })
-        grunt.file.write(folder+'/index.html', '' );
+        if(!grunt.file.exists(folder+'/index.html')){
+            grunt.file.write(folder+'/index.html', '' );
+        }
     }
     
     
